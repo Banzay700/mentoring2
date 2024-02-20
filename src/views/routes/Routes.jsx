@@ -1,7 +1,4 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "../Home/Home";
 import Register from "../Register/Register";
 import Login from "../Login/Login";
@@ -9,13 +6,14 @@ import Profile from "../Profile/Profile";
 import Settings from "../Settings/Settings";
 import Groups from "../Groups/Groups";
 import Videos from "../Videos/Videos";
-import Friends from "../Friends/Friends";
+import { Friends, FriendsAll, FriendsRequests } from "../Friends";
 import Confirmation from "../Confirmation/Confirmation";
+import { PATH } from "../../utils/constants";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />
+    element: <Home />,
   },
   {
     path: "register",
@@ -31,15 +29,23 @@ const router = createBrowserRouter([
   },
   {
     path: "profile/:id",
-    element: <Profile />
+    element: <Profile />,
   },
   {
     path: "settings",
     element: <Settings />,
   },
   {
-    path: "friends",
+    path: PATH.FRIENDS,
     element: <Friends />,
+  },
+  {
+    path: PATH.FRIENDS_REQUESTS,
+    element: <FriendsRequests />,
+  },
+  {
+    path: PATH.FRIENDS_ALL,
+    element: <FriendsAll />,
   },
   {
     path: "watch",
@@ -59,4 +65,4 @@ const router = createBrowserRouter([
   },
 ]);
 
-export const App = () => (<RouterProvider router={router} />);
+export const App = () => <RouterProvider router={router} />;

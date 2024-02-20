@@ -87,6 +87,11 @@ export const theme = createTheme({
       selectIcon: "#536A80",
       field: "#F0F2F5",
     },
+    text: {
+      base: "#050505",
+      grey: "#6a6d71",
+      white: "#fff",
+    },
   },
   components: {
     MuiButton: {

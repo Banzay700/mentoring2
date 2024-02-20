@@ -65,6 +65,8 @@ ActionIconButton.propTypes = {
     "share",
     "settings",
     "notification",
+    "arrowLeft",
+    "arrowRight",
   ]),
   filledOnPress: PropTypes.bool,
   withHover: PropTypes.bool,

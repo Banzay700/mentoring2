@@ -2,13 +2,13 @@ import { Divider, Stack, Typography } from "@mui/material";
 
 import { FriendsSettingsPopover } from "./FriendsSettingsPopover";
 import { FriendsSidebarItem } from "./FriendsSidebarItem";
-import { sidebarItemsMap } from "./FriendsPageSidebar.utils";
+import { sidebarItemsMap } from "./FriendsMainSidebar.utils.jsx";
 import {
   SidebarHeaderWrapper,
   SidebarWrapper,
-} from "./FriendsPageSidebar.styled";
+} from "./FriendsMainSidebar.styled.js";
 
-const FriendsPageSidebar = () => {
+const FriendsMainSidebar = () => {
   return (
     <SidebarWrapper>
       <SidebarHeaderWrapper>
@@ -25,13 +25,10 @@ const FriendsPageSidebar = () => {
         ))}
       </Stack>
       <Divider orientation="horizontal" sx={{ my: "8px" }} />
-      <Typography fontSize="17px" fontWeight="500">
-        New friends
-      </Typography>
     </SidebarWrapper>
   );
 };
 
-FriendsPageSidebar.displayName = "FriendsPageSidebar";
+FriendsMainSidebar.displayName = "FriendsMainSidebar";
 
-export default FriendsPageSidebar;
+export default FriendsMainSidebar;

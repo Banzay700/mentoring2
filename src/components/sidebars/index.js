@@ -1,1 +1,2 @@
-export {default as FriendsPageSidebar} from './FriendsPageSidebar'
+export { default as FriendsMainSidebar } from "./FriendsMainSidebar";
+export { default as FriendsSubSidebar } from "./FriendsSubSidebar";

@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { Stack } from "@mui/material";
 
 export const SidebarWrapper = styled(Stack)(({ theme }) => ({
-  width: "360px",
+  minWidth: "360px",
   height: "100%",
   backgroundColor: theme.palette?.white,
   boxShadow:
