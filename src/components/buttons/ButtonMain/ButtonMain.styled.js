@@ -15,8 +15,11 @@ const getBtnColorVariant = (theme) => ({
   },
 });
 
-export const ButtonMainBase = styled(Button)(({ bgcolor, theme }) => ({
-  boxShadow: "none",
-  borderRadius: "5px",
-  ...getBtnColorVariant(theme)[bgcolor],
-}));
+export const ButtonMainBase = styled(Button)(
+  ({ fullWidth, bgcolor, theme }) => ({
+    boxShadow: "none",
+    borderRadius: "5px",
+    width: fullWidth ? "100%" : "fit-content",
+    ...getBtnColorVariant(theme)[bgcolor],
+  }),
+);

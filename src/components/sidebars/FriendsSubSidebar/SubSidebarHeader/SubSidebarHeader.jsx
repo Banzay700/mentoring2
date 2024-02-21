@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
-import { HeaderWrapper } from "./SubSidebarHeader.styled";
 import { Stack, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
-import ActionIconButton from "../../../buttons/ActionIconButton";
 
-const SubSidebarHeader = ({ heading, link }) => {
+import { Link } from "../../../index";
+import ActionIconButton from "../../../buttons/ActionIconButton";
+import { HeaderWrapper } from "./SubSidebarHeader.styled";
+
+const SubSidebarHeader = ({ heading, link, children }) => {
   return (
     <HeaderWrapper>
       <Stack direction="row" alignItems="center" gap="12px">
@@ -18,13 +19,16 @@ const SubSidebarHeader = ({ heading, link }) => {
           </Typography>
         </Stack>
       </Stack>
+      {children}
     </HeaderWrapper>
   );
 };
 
 SubSidebarHeader.propTypes = {
+  withSearch: PropTypes.bool,
   link: PropTypes.string,
   heading: PropTypes.string,
+  children: PropTypes.any,
 };
 
 SubSidebarHeader.displayName = "SubSidebarHeader";

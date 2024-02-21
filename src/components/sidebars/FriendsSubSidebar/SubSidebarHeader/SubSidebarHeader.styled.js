@@ -6,4 +6,5 @@ export const HeaderWrapper = styled(Stack)(({ theme }) => ({
   borderBottom: "1px solid",
   borderColor: theme.palette.greyBorder,
   width: "100%",
+  gap: "14px",
 }));

@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-import { FriendsListWrapper } from "./FriendsList.styled.js";
 import { Stack, Typography, Link } from "@mui/material";
 import { FriendCard } from "../../../../components/friends-page-components";
+import { FriendsListWrapper } from "./FriendsList.styled";
 
-const FriendsList = ({ users, heading, link }) => {
+const FriendsList = ({ variant, users, heading, link }) => {
   return (
     <FriendsListWrapper>
       <Stack direction="row" justifyContent="space-between" marginBottom="20px">
@@ -15,23 +15,21 @@ const FriendsList = ({ users, heading, link }) => {
         </Link>
       </Stack>
       <Stack direction="row" flexWrap="wrap" gap="20px">
-        <FriendCard fullName="John Wick" image="https://picsum.photos/200" />
-        <FriendCard fullName="John Wick" image="https://picsum.photos/200" />
-        <FriendCard fullName="John Wick" image="https://picsum.photos/200" />
-        <FriendCard fullName="John Wick" image="https://picsum.photos/200" />
-        <FriendCard fullName="John Wick" image="https://picsum.photos/200" />
-        <FriendCard fullName="John Wick" image="https://picsum.photos/200" />
-        <FriendCard fullName="John Wick" image="https://picsum.photos/200" />
-        <FriendCard fullName="John Wick" image="https://picsum.photos/200" />
-        <FriendCard fullName="John Wick" image="https://picsum.photos/200" />
-        <FriendCard fullName="John Wick" image="https://picsum.photos/200" />
-        <FriendCard fullName="John Wick" image="https://picsum.photos/200" />
+        {users.map(({ id, firstName, lastName, avatar }) => (
+          <FriendCard
+            variant={variant}
+            key={id}
+            fullName={`${firstName} ${lastName}`}
+            image={avatar}
+          />
+        ))}
       </Stack>
     </FriendsListWrapper>
   );
 };
 
 FriendsList.propTypes = {
+  variant: PropTypes.oneOf(["friends", "requests"]),
   users: PropTypes.array,
   heading: PropTypes.string,
   link: PropTypes.string,

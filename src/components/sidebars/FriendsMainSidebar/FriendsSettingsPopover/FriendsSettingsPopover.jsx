@@ -2,7 +2,7 @@ import { ActionIconButton } from "../../../index.js";
 import Box from "@mui/material/Box";
 import { useState } from "react";
 import { Popover } from "@mui/material";
-import { PopoverContent } from "./PopoverContent/index.js";
+import { PopoverContent } from "./PopoverContent";
 
 const FriendsSettingsPopover = () => {
   const [anchorEl, setAnchorEl] = useState();
